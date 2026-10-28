@@ -1,0 +1,1 @@
+<section class="container section center"><div class="card errorpage"><div class="display">Mã <?=e($code??500)?></div><h1><?=e($message??'Đã xảy ra lỗi')?></h1><p><?=e($debug??'')?></p><a class="btn btn-main" href="<?=e(url())?>">Về trang chủ</a></div></section>

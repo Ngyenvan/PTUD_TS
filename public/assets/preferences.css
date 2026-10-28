@@ -1,0 +1,11 @@
+/* Chức năng đăng ký nguyện vọng (bổ sung IS4). */
+.pref-info-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px}
+.pref-info-grid>div {display:flex;flex-direction:column;gap:5px;min-width:0;word-break:break-word}
+.pref-info-grid strong {line-height:1.5;font-size:.98rem}
+.pref-fieldset {border:1px solid #e1ddf0;border-radius:12px;padding:16px;display:flex;gap:24px;flex-wrap:wrap}
+.pref-fieldset legend {font-weight:700;padding:0 6px}
+.pref-choice {display:flex!important;gap:8px;align-items:center;cursor:pointer}
+.pref-choice input {width:auto!important;min-width:16px}
+#regular-preferences[hidden] {display:none!important}
+#regular-preferences h3 {margin-bottom:12px}
+@media(max-width:720px){.pref-info-grid{grid-template-columns:1fr}.pref-fieldset{gap:12px}}
