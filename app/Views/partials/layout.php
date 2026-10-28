@@ -2,7 +2,8 @@
 <!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#5e36db"><title>IS4 | Hệ thống tuyển sinh lớp 10</title>
 <link rel="stylesheet" href="<?=e(url('public/assets/style.css'))?>">
-<link rel="stylesheet" href="<?=e(url('public/assets/preferences.css'))?>"></head><body>
+<link rel="stylesheet" href="<?=e(url('public/assets/preferences.css'))?>">
+<link rel="stylesheet" href="<?=e(url('public/assets/permissions.css'))?>"></head><body>
 <div class="top-strip"><div class="container flex-between"><span>IS4 · Hệ thống tuyển sinh lớp 10</span><span>Bản thực hành học tập · Không thuộc cơ quan tuyển sinh</span></div></div>
 <header class="header"><div class="container topnav">
 <a class="brand" href="<?=e(url())?>"><img src="<?=e(url('public/assets/logo-is4.png'))?>" alt="Logo IS4"><span><b>IS4 Tuyển sinh</b><small>CỔNG THÔNG TIN LỚP 10</small></span></a>

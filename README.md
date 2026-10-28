@@ -31,6 +31,14 @@ Nếu database dùng tài khoản/mật khẩu/port khác, chỉnh trong `config
 & 'C:\xampp\php\php.exe' tools/install.php
 ```
 
+Nếu đây là database đã cài từ phiên bản trước khi có quyền riêng theo tài khoản, chạy thêm một lần:
+
+```powershell
+& 'D:\Learn_Space\Documents\PHP-Code\xampp\php\php.exe' tools/upgrade-user-permissions.php
+```
+
+Trang **Phân quyền** cho phép đổi vai trò/phạm vi của từng tài khoản, cấp hoặc thu hồi quyền ngoại lệ cho một người dùng, đồng thời vẫn duy trì ma trận quyền mặc định theo vai trò. Mọi thay đổi và lỗi cập nhật nhạy cảm đều được ghi nhật ký.
+
 Script tạo database nếu chưa có, dùng `CREATE TABLE IF NOT EXISTS`, không dùng `DROP`/`TRUNCATE`. Nó sinh mật khẩu **ngẫu nhiên riêng cho các tài khoản mới**, chỉ in một lần trong Terminal sau khi tạo. **Tự lưu mật khẩu ở nơi riêng tư**, không gửi mật khẩu trong ảnh/chat. Chạy lại không đặt lại mật khẩu tài khoản hiện có hoặc cấp lại quyền đã thu hồi. Nếu tài khoản đã tồn tại, script in `đã có` và không đổi mật khẩu.
 
 5. Mở:

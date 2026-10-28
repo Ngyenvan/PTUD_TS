@@ -109,17 +109,24 @@ final class Auth
             return true;
         }
 
+        // Quyền riêng của tài khoản được ưu tiên hơn quyền mặc định của vai trò.
+        $override = DB::one(
+            'SELECT o.effect
+             FROM user_permission_overrides o
+             JOIN permissions p ON p.id=o.permission_id
+             WHERE o.user_id=? AND p.code=?',
+            [$user['id'], $permission]
+        );
+        if ($override) {
+            return $override['effect'] === 'grant';
+        }
+
         return DB::one(
             'SELECT 1
              FROM role_permissions rp
-             JOIN permissions p
-               ON rp.permission_id = p.id
-             WHERE rp.role_id = ?
-               AND p.code = ?',
-            [
-                $user['role_id'],
-                $permission
-            ]
+             JOIN permissions p ON rp.permission_id=p.id
+             WHERE rp.role_id=? AND p.code=?',
+            [$user['role_id'], $permission]
         ) !== null;
     }
 

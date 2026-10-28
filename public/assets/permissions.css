@@ -1,0 +1,4 @@
+.actions-inline,.form-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.form-actions{margin-top:24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.permission-check:disabled{cursor:not-allowed}

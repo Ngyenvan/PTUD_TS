@@ -29,6 +29,13 @@ CREATE TABLE IF NOT EXISTS users (
  FOREIGN KEY (role_id) REFERENCES roles(id), FOREIGN KEY(school_id) REFERENCES schools(id),
  FOREIGN KEY(exam_id) REFERENCES exam_cycles(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS user_permission_overrides (
+ user_id INT NOT NULL, permission_id INT NOT NULL, effect ENUM('grant','revoke') NOT NULL,
+ updated_by INT NOT NULL, updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY(user_id,permission_id),
+ FOREIGN KEY(user_id) REFERENCES users(id), FOREIGN KEY(permission_id) REFERENCES permissions(id),
+ FOREIGN KEY(updated_by) REFERENCES users(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 CREATE TABLE IF NOT EXISTS candidates (
  id INT AUTO_INCREMENT PRIMARY KEY, code VARCHAR(40) NOT NULL UNIQUE, full_name VARCHAR(140) NOT NULL,
  birth_date DATE NOT NULL, thcs_id INT NOT NULL, user_id INT NULL UNIQUE,
